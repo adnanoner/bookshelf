@@ -8,6 +8,7 @@
 
 import _, { map, noop } from 'lodash';
 import Promise from './promise';
+import Errors from './errors';
 
 function EagerBase(parent, parentResponse, target) {
   this.parent = parent;
@@ -46,7 +47,8 @@ _.extend(EagerBase.prototype, {
       if (handled[relationName]) continue;
 
       if (!_.isFunction(target[relationName])){
-        throw new Error(relationName + ' is not defined on the model.');
+        throw new Errors.NotDefinedError(relationName + ' is not defined on the model.');
+        // throw new Error(relationName + ' is not defined on the model.');
       }
 
       const relation = target[relationName]();

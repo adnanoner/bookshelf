@@ -15,4 +15,7 @@ module.exports = {
   // Thrown when a delete affects no rows and {require: true} is passed in model.destroy.
   NoRowsDeletedError: createError('NoRowsDeletedError')
 
+  // Thrown when the model is not defined
+  NotDefinedError: createError('NotDefinedError'),
+
 };
