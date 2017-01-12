@@ -8,7 +8,7 @@
 
 import _, { map, noop } from 'lodash';
 import Promise from './promise';
-import Errors from './errors';
+import Errors from '../errors';
 
 function EagerBase(parent, parentResponse, target) {
   this.parent = parent;
